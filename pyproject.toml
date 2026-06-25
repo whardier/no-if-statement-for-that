@@ -1,0 +1,13 @@
+[project]
+name = "talk"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+  "langchain[anthropic]",
+  "langchain-anthropic",
+  "langchain-voyageai>=0.3.3",
+  "pydantic>=2.13.4",
+  "langgraph>=1.2.6",
+]

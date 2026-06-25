@@ -1,0 +1,27 @@
+{
+  "name": "no-if-statement-for-that",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "slidev build",
+    "dev": "slidev",
+    "export": "slidev export"
+  },
+  "dependencies": {
+    "@iconify-json/boxicons": "^1.2.0",
+    "@iconify-json/bx": "^1.2.3",
+    "@iconify-json/bxl": "^1.2.4",
+    "@iconify-json/bxs": "^1.2.3",
+    "@iconify-json/devicon": "^1.2.62",
+    "@iconify-json/emojione": "^1.2.3",
+    "@iconify-json/simple-icons": "^1.2.87",
+    "@slidev/cli": "^52.16.0",
+    "@slidev/theme-default": "latest",
+    "@slidev/theme-seriph": "latest",
+    "vue": "^3.5.38"
+  },
+  "packageManager": "pnpm@11.9.0+sha512.bd682d5d03fe525ef7c9fd6780c6884d1e756ac4c9c9fe00c538782824310dcf90e3ddc4f53835f06dfaebd5085e41855e0bcbb3b60de2ac5bbab89e5036f03b",
+  "devDependencies": {
+    "playwright-chromium": "^1.61.1"
+  }
+}
