@@ -37,11 +37,13 @@ Simple, reliable LLM solutions to hard problems — with **LangChain**, **LangGr
 </div>
 
 <!--
-Hello hi and welcome to "No If Statement for That" .. a talk on LangChain, LangGraph, and leveraging the Anthropic API as well as some Anthropic partner models through a few demos.
+Hi.. I'm Shane - if you know me then great (maybe?).. if not then that's the next slide.
 
-The premise here is — as software developers we are faced with the challenge of building logic according to difficult or shifting requirements that can be expensive or even completely impractical for a small team even though on paper these problems seem very straight forward.
+This is - "No If Statement for That" .. a talk on LangChain, LangGraph, and leveraging the Anthropic API as well as some Anthropic partner models through a few demos.
 
-Often enough — there is no if statement for that...
+The premise here is — as software developers we are faced with the challenge of building logic  that seems simple enough - but is much harder and more expensive to implement than inspiration lead us to believe.
+
+So often enough — there is no if statement for that...  That is this talk.
 -->
 
 ---
@@ -61,7 +63,7 @@ and consulting).
 Husband and dad.  Eight-year-old child as seen in the picture (foot only).
 
 <!--
-As pictured here, this is me. I've been a software developer for quite a while, well over 20 years, and have a huge history in systems engineering as well as creating Software-as-a-Service solutions. I love Linux. I love Python. I love all sorts of fun stuff that I could probably talk your ear off until Christmas.
+As pictured here, this is me. I've been a software developer for quite a while, well over 20 years, and have a huge history in systems engineering as well as creating Software-as-a-Service solutions. I love Linux. I love Python. I love all sorts stuff.
 
 I'm also a husband and a dad, and you can see the 8-year-old's part of the picture here, just the foot though. He thought that was pretty funny and loves to do it often.
 
@@ -141,8 +143,9 @@ Simply put.. LangChain is an open source framework for building applications wit
 
 I've been using it for RAG (Retrieval Augmented Generation) scenarios, where it helps integrate external knowledge sources into LLM workflows for more accurate and context-aware responses.
 
-Lately I've been leveraging it a LOT for structured extraction... where I've been creating strict JSON schemas defining what a markdown file should contain.. and in what order.. and then leveraging structured extraction to ensure nothing is missed as summarization and analysis is done to develop those files.
+Lately I've been leveraging it a LOT for structured extraction... where I've been creating strict JSON schemas defining what a markdown file should contain.. and in what order.. and use structured extraction to ensure nothing is missed as summarization and analysis is done to do the work.
 -->
+
 ---
 transition: slide-up
 ---
@@ -331,9 +334,7 @@ Integration provided parameters:
 <!--
 Okay, so here is a common enough issue that is very difficult to solve using regular expressions or natural language processing tools that often comes up for SaaS. I've also found some of these platforms that enable social integrations, like being able to log in with LinkedIn or Facebook.
 
-When that authorization happens and you are transferred back to the portal you're signing up for, you might be a little irritated that it's asking for your name again, even though you just authenticated and that thing should know who you are and pass that back during your enrollment. Often that data is dirty or dirty enough to be problematic, and SaaS platforms make a decision to just force you to enter that information again or bring in what you had for any parts of your name or your occupation or anything else that's being brought over from that integration.
-
-The problem with bringing in just parts here and there is that people are lazy and they'll just click okay, and then you end up with less valuable data, to put it bluntly. It's harder for support teams to do outreach and find the right person when there's an issue. It's problematic when there is a legal concern that requires outreach of some kind, and all a service has is your nickname on GitHub or your funny handle on LinkedIn.
+(( riff on data exchange ))
 
 So I love theoretically solving this through LLMs and leveraging a lesser-used one that Anthropic provides called Haiku to do some of this work because it is super fast and more than capable of handling some of the work that I'm about to demo.
 -->
@@ -647,17 +648,17 @@ examples = [
     HumanMessage(
         content=dedent(
             """\
-            Provided email: spencersr@gmail.com
+            Provided email: bobber@gmail.com
 
-            Potential full name: Shane R. Spencer III Esq. pH.D.
-            Potential first name: Shaneypoo
-            Potential last name:
+            Potential full name: Bobby
+            Potential first name: Bob
+            Potential last name: Smith
 
             Please respond with a normalized full name, first name, and last name based on the above information.
             """
         )
     ),
-    AIMessage(content='{"full_name": "Shane R. Spencer III", "first_name": "Shane", "last_name": "Spencer", "email_address": "spencersr@gmail.com"}'),
+    AIMessage(content='{"full_name": "Bob Smith", "first_name": "Bob", "last_name": "Smith", "email_address": "bobber@gmail.com"}'),
     # ... MANY MANY MORE EXAMPLES
 ]
 
@@ -860,7 +861,7 @@ You've got to know when to hold 'em, know when to fold 'em
 - For all search terms we need to expand them similarly to how we enriched and normalized the embeddings by using an LLM
   to process the term.
   - Potentially fan out several sets of search terms to get multiple result streams going.
-- Ensure that the matchers (post filtering) contain a reduces set of terms.
+- Ensure that the matchers (post filtering) contain a reduced set of terms.
 - Overselect (want 5.. select the top 50)
 - Filter the overselection (could be an LLM process).
 
